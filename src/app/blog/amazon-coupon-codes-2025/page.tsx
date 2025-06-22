@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import EmailForm from '@/components/email-form'
+import CopyCodeButton from '@/components/copy-code-button'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -113,15 +114,11 @@ export default function AmazonCouponCodes2025Page() {
                       <h4 className="text-lg font-bold text-gray-900">PRIME20</h4>
                       <p className="text-sm text-gray-600">20% off electronics over $100</p>
                     </div>
-                    <button 
-                      onClick={() => {
-                        navigator.clipboard.writeText('PRIME20')
-                        alert('Code PRIME20 copied! Apply at Amazon checkout.')
-                      }}
+                    <CopyCodeButton 
+                      code="PRIME20"
+                      alert="Code PRIME20 copied! Apply at Amazon checkout."
                       className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm"
-                    >
-                      Copy Code
-                    </button>
+                    />
                   </div>
                   <p className="text-xs text-gray-500">Expires: June 30, 2025 • Minimum: $100</p>
                 </div>
@@ -132,15 +129,11 @@ export default function AmazonCouponCodes2025Page() {
                       <h4 className="text-lg font-bold text-gray-900">PRIMESAVE</h4>
                       <p className="text-sm text-gray-600">Free shipping + 15% off</p>
                     </div>
-                    <button 
-                      onClick={() => {
-                        navigator.clipboard.writeText('PRIMESAVE')
-                        alert('Code PRIMESAVE copied! Apply at Amazon checkout.')
-                      }}
+                    <CopyCodeButton 
+                      code="PRIMESAVE"
+                      alert="Code PRIMESAVE copied! Apply at Amazon checkout."
                       className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm"
-                    >
-                      Copy Code
-                    </button>
+                    />
                   </div>
                   <p className="text-xs text-gray-500">Expires: July 15, 2025 • Minimum: $50</p>
                 </div>
@@ -168,30 +161,20 @@ export default function AmazonCouponCodes2025Page() {
                         <p className="font-medium text-gray-900">TECH30</p>
                         <p className="text-sm text-gray-600">30% off laptops</p>
                       </div>
-                      <button 
-                        onClick={() => {
-                          navigator.clipboard.writeText('TECH30')
-                          alert('Code TECH30 copied!')
-                        }}
+                      <CopyCodeButton 
+                        code="TECH30"
                         className="px-3 py-1 bg-purple-600 text-white rounded text-sm hover:bg-purple-700 transition-colors"
-                      >
-                        Copy
-                      </button>
+                      >Copy</CopyCodeButton>
                     </div>
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="font-medium text-gray-900">PHONE25</p>
                         <p className="text-sm text-gray-600">$25 off phones</p>
                       </div>
-                      <button 
-                        onClick={() => {
-                          navigator.clipboard.writeText('PHONE25')
-                          alert('Code PHONE25 copied!')
-                        }}
+                      <CopyCodeButton 
+                        code="PHONE25"
                         className="px-3 py-1 bg-purple-600 text-white rounded text-sm hover:bg-purple-700 transition-colors"
-                      >
-                        Copy
-                      </button>
+                      >Copy</CopyCodeButton>
                     </div>
                   </div>
                 </div>
@@ -212,30 +195,20 @@ export default function AmazonCouponCodes2025Page() {
                         <p className="font-medium text-gray-900">FASHION40</p>
                         <p className="text-sm text-gray-600">40% off clothing</p>
                       </div>
-                      <button 
-                        onClick={() => {
-                          navigator.clipboard.writeText('FASHION40')
-                          alert('Code FASHION40 copied!')
-                        }}
+                      <CopyCodeButton 
+                        code="FASHION40"
                         className="px-3 py-1 bg-pink-600 text-white rounded text-sm hover:bg-pink-700 transition-colors"
-                      >
-                        Copy
-                      </button>
+                      >Copy</CopyCodeButton>
                     </div>
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="font-medium text-gray-900">SHOES20</p>
                         <p className="text-sm text-gray-600">20% off footwear</p>
                       </div>
-                      <button 
-                        onClick={() => {
-                          navigator.clipboard.writeText('SHOES20')
-                          alert('Code SHOES20 copied!')
-                        }}
+                      <CopyCodeButton 
+                        code="SHOES20"
                         className="px-3 py-1 bg-pink-600 text-white rounded text-sm hover:bg-pink-700 transition-colors"
-                      >
-                        Copy
-                      </button>
+                      >Copy</CopyCodeButton>
                     </div>
                   </div>
                 </div>
@@ -256,30 +229,20 @@ export default function AmazonCouponCodes2025Page() {
                         <p className="font-medium text-gray-900">HOME25</p>
                         <p className="text-sm text-gray-600">25% off home goods</p>
                       </div>
-                      <button 
-                        onClick={() => {
-                          navigator.clipboard.writeText('HOME25')
-                          alert('Code HOME25 copied!')
-                        }}
+                      <CopyCodeButton 
+                        code="HOME25"
                         className="px-3 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700 transition-colors"
-                      >
-                        Copy
-                      </button>
+                      >Copy</CopyCodeButton>
                     </div>
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="font-medium text-gray-900">GARDEN15</p>
                         <p className="text-sm text-gray-600">15% off garden tools</p>
                       </div>
-                      <button 
-                        onClick={() => {
-                          navigator.clipboard.writeText('GARDEN15')
-                          alert('Code GARDEN15 copied!')
-                        }}
+                      <CopyCodeButton 
+                        code="GARDEN15"
                         className="px-3 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700 transition-colors"
-                      >
-                        Copy
-                      </button>
+                      >Copy</CopyCodeButton>
                     </div>
                   </div>
                 </div>
