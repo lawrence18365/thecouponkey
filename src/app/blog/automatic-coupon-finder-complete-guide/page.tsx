@@ -357,15 +357,14 @@ export default function AutomaticCouponFinderGuidePage() {
                     </div>
                   </div>
                   
-                  <button 
-                    onClick={() => {
-                      console.log('WikiBuy install clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to WikiBuy extension download')
-                    }}
-                    className="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                  <Link 
+                    href="https://chrome.google.com/webstore/detail/capital-one-shopping/nenlahapcbofgnanklpelkaejcehkggg" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors inline-block text-center"
                   >
                     Install WikiBuy Free
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Honey */}
@@ -408,15 +407,14 @@ export default function AutomaticCouponFinderGuidePage() {
                     </div>
                   </div>
                   
-                  <button 
-                    onClick={() => {
-                      console.log('Honey install clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to Honey extension download')
-                    }}
-                    className="w-full px-6 py-3 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors"
+                  <Link 
+                    href="https://chrome.google.com/webstore/detail/honey/bmnlcjabgnpnenekpadlanbbkooimhnj" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full px-6 py-3 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors inline-block text-center"
                   >
                     Install Honey Free
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Quick list for others */}
@@ -425,15 +423,14 @@ export default function AutomaticCouponFinderGuidePage() {
                     <h4 className="text-lg font-bold text-gray-900 mb-2">3. Rakuten</h4>
                     <p className="text-purple-600 text-sm font-medium mb-3">Best for cash back</p>
                     <p className="text-gray-600 text-sm mb-4">Real money payments + coupons. Up to 40% cash back.</p>
-                    <button 
-                      onClick={() => {
-                        console.log('Rakuten signup clicked - DEMO MODE')
-                        alert('Demo Mode: In production, this would redirect to Rakuten signup')
-                      }}
-                      className="w-full px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded hover:bg-purple-700"
+                    <Link 
+                      href="https://www.rakuten.com/r/COUPON123?eeid=29041"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded hover:bg-purple-700 inline-block text-center"
                     >
                       Join Rakuten
-                    </button>
+                    </Link>
                   </div>
 
                   <div className="bg-white border border-gray-200 rounded-lg p-6">
@@ -756,33 +753,30 @@ export default function AutomaticCouponFinderGuidePage() {
                 </div>
                 
                 <div className="flex flex-wrap gap-4 justify-center">
-                  <button 
-                    onClick={() => {
-                      console.log('WikiBuy install clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to WikiBuy extension download')
-                    }}
-                    className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                  <Link 
+                    href="https://chrome.google.com/webstore/detail/capital-one-shopping/nenlahapcbofgnanklpelkaejcehkggg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors inline-block"
                   >
                     Install WikiBuy Free
-                  </button>
-                  <button 
-                    onClick={() => {
-                      console.log('Honey install clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to Honey extension download')
-                    }}
-                    className="px-8 py-3 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors"
+                  </Link>
+                  <Link 
+                    href="https://chrome.google.com/webstore/detail/honey/bmnlcjabgnpnenekpadlanbbkooimhnj"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-3 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors inline-block"
                   >
                     Install Honey Free
-                  </button>
-                  <button 
-                    onClick={() => {
-                      console.log('Rakuten signup clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to Rakuten signup')
-                    }}
-                    className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
+                  </Link>
+                  <Link 
+                    href="https://www.rakuten.com/r/COUPON123?eeid=29041"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors inline-block"
                   >
                     Join Rakuten
-                  </button>
+                  </Link>
                 </div>
                 
                 <p className="text-gray-300 text-center mt-6">
