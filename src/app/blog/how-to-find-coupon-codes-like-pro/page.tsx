@@ -1,7 +1,17 @@
-'use client'
-
 import Link from 'next/link'
 import EmailForm from '@/components/email-form'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'How to Find Coupon Codes Like a Pro: 12 Expert Methods That Actually Work | TheCouponKey',
+  description: 'Stop relying on expired coupon sites. Learn the insider techniques that professional deal hunters use to find working discount codes for any store, any time.',
+  keywords: ['how to find coupon codes', 'coupon hunting tips', 'discount codes', 'promo codes', 'savings strategies'],
+  openGraph: {
+    title: 'How to Find Coupon Codes Like a Pro: 12 Expert Methods That Actually Work',
+    description: 'Stop relying on expired coupon sites. Learn the insider techniques that professional deal hunters use to find working discount codes for any store, any time.',
+    type: 'article',
+  },
+}
 
 export default function HowToFindCouponCodesPage() {
   return (
@@ -108,15 +118,14 @@ export default function HowToFindCouponCodesPage() {
                     <li>• 96% uptime reliability</li>
                     <li>• Works on 40,000+ websites</li>
                   </ul>
-                  <button 
-                    onClick={() => {
-                      console.log('WikiBuy install clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to WikiBuy extension download')
-                    }}
-                    className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  <Link 
+                    href="https://chrome.google.com/webstore/detail/wikibuy/ahijiagkmcnojhmhdjajmglejhocnheb"
+                    className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium block text-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Install WikiBuy Free
-                  </button>
+                  </Link>
                 </div>
 
                 <div className="bg-white rounded-xl p-6 border border-amber-100">
@@ -137,15 +146,14 @@ export default function HowToFindCouponCodesPage() {
                     <li>• 17+ million users</li>
                     <li>• Best user interface</li>
                   </ul>
-                  <button 
-                    onClick={() => {
-                      console.log('Honey install clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to Honey extension download')
-                    }}
-                    className="w-full px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium"
+                  <Link 
+                    href="https://chrome.google.com/webstore/detail/honey/bmnlcjabgnpnenekpadlanbbkooimhnj"
+                    className="w-full px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium block text-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Install Honey Free
-                  </button>
+                  </Link>
                 </div>
               </div>
               

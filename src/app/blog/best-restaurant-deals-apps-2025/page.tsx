@@ -142,15 +142,14 @@ export default function RestaurantDealsAppsPage() {
                   </p>
                 </div>
                 
-                <button 
-                  onClick={() => {
-                    console.log('Restaurant.com clicked - DEMO MODE')
-                    alert('Demo Mode: In production, this would redirect to Restaurant.com with affiliate link')
-                  }}
-                  className="w-full px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
+                <Link 
+                  href="https://www.restaurant.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors inline-block text-center"
                 >
                   Get Restaurant.com Deals
-                </button>
+                </Link>
               </div>
 
               {/* Entertainment.com */}
@@ -202,15 +201,14 @@ export default function RestaurantDealsAppsPage() {
                   </div>
                 </div>
                 
-                <button 
-                  onClick={() => {
-                    console.log('Entertainment.com clicked - DEMO MODE')
-                    alert('Demo Mode: In production, this would redirect to Entertainment.com with affiliate link')
-                  }}
-                  className="w-full px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
+                <Link 
+                  href="https://www.entertainment.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors inline-block text-center"
                 >
                   Explore Entertainment.com
-                </button>
+                </Link>
               </div>
 
               {/* Clipp */}
@@ -262,15 +260,14 @@ export default function RestaurantDealsAppsPage() {
                   </div>
                 </div>
                 
-                <button 
-                  onClick={() => {
-                    console.log('Clipp clicked - DEMO MODE')
-                    alert('Demo Mode: In production, this would redirect to Clipp with affiliate link')
-                  }}
-                  className="w-full px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
+                <Link 
+                  href="https://www.clipp.app" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors inline-block text-center"
                 >
                   Download Clipp App
-                </button>
+                </Link>
               </div>
 
               {/* Quick comparison for others */}
@@ -591,33 +588,30 @@ export default function RestaurantDealsAppsPage() {
                 </div>
                 
                 <div className="flex flex-wrap gap-4 justify-center">
-                  <button 
-                    onClick={() => {
-                      console.log('Restaurant.com clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to Restaurant.com with affiliate link')
-                    }}
-                    className="px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors"
+                  <Link 
+                    href="https://www.restaurant.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors inline-block"
                   >
                     Get Restaurant.com Deals
-                  </button>
-                  <button 
-                    onClick={() => {
-                      console.log('Entertainment.com clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to Entertainment.com with affiliate link')
-                    }}
-                    className="px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
+                  </Link>
+                  <Link 
+                    href="https://www.entertainment.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors inline-block"
                   >
                     Try Entertainment.com
-                  </button>
-                  <button 
-                    onClick={() => {
-                      console.log('Clipp clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to Clipp with affiliate link')
-                    }}
-                    className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
+                  </Link>
+                  <Link 
+                    href="https://www.clipp.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors inline-block"
                   >
                     Download Clipp
-                  </button>
+                  </Link>
                 </div>
                 
                 <p className="text-gray-300 text-center mt-6">

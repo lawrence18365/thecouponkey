@@ -1,7 +1,17 @@
-'use client'
-
 import Link from 'next/link'
 import EmailForm from '@/components/email-form'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Amazon Coupon Codes 2025: 50+ Working Codes & Hidden Deals | TheCouponKey',
+  description: 'Get exclusive Amazon promo codes, Prime member deals, and secret discounts. Our verified codes save up to 70% on electronics, fashion, home goods, and more.',
+  keywords: ['Amazon coupon codes', 'Amazon promo codes', 'Amazon deals', 'Prime member discounts', 'Amazon coupons 2025'],
+  openGraph: {
+    title: 'Amazon Coupon Codes 2025: 50+ Working Codes & Hidden Deals',
+    description: 'Get exclusive Amazon promo codes, Prime member deals, and secret discounts. Our verified codes save up to 70% on electronics, fashion, home goods, and more.',
+    type: 'article',
+  },
+}
 
 export default function AmazonCouponCodes2025Page() {
   return (
@@ -299,15 +309,14 @@ export default function AmazonCouponCodes2025Page() {
                     <li>• Saved users $3.2 billion to date</li>
                     <li>• Enterprise-level security</li>
                   </ul>
-                  <button 
-                    onClick={() => {
-                      console.log('WikiBuy install clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to WikiBuy extension download')
-                    }}
-                    className="mt-4 w-full px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                  <Link 
+                    href="https://chrome.google.com/webstore/detail/wikibuy/ahijiagkmcnojhmhdjajmglejhocnheb"
+                    className="mt-4 w-full px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors block text-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Install WikiBuy Free
-                  </button>
+                  </Link>
                 </div>
                 
                 <div className="bg-white bg-opacity-10 rounded-xl p-6 text-left">
@@ -318,15 +327,14 @@ export default function AmazonCouponCodes2025Page() {
                     <li>• 17+ million active users</li>
                     <li>• Works on 30,000+ websites</li>
                   </ul>
-                  <button 
-                    onClick={() => {
-                      console.log('Honey install clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to Honey extension download')
-                    }}
-                    className="mt-4 w-full px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                  <Link 
+                    href="https://chrome.google.com/webstore/detail/honey/bmnlcjabgnpnenekpadlanbbkooimhnj"
+                    className="mt-4 w-full px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors block text-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Install Honey Free
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

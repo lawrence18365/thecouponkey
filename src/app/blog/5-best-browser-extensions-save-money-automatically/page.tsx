@@ -1,9 +1,17 @@
-'use client'
-
 import Link from 'next/link'
 import EmailForm from '@/components/email-form'
+import { Metadata } from 'next'
 
-// Note: Metadata moved to layout.tsx since this is now a Client Component
+export const metadata: Metadata = {
+  title: '5 Best Browser Extensions That Save Money Automatically | TheCouponKey',
+  description: 'Stop searching for coupon codes manually. These verified extensions automatically find discounts and save you money on every purchase.',
+  keywords: ['browser extensions', 'coupon finder', 'automatic savings', 'money saving tools', 'discount extensions'],
+  openGraph: {
+    title: '5 Best Browser Extensions That Save Money Automatically',
+    description: 'Stop searching for coupon codes manually. These verified extensions automatically find discounts and save you money on every purchase.',
+    type: 'article',
+  },
+}
 
 export default function BestBrowserExtensionsPage() {
   return (
@@ -137,18 +145,17 @@ export default function BestBrowserExtensionsPage() {
                 </div>
                 
                 <div className="text-center">
-                  <button 
-                    onClick={() => {
-                      console.log('WikiBuy install clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to WikiBuy extension download')
-                    }}
+                  <Link 
+                    href="https://chrome.google.com/webstore/detail/wikibuy/ahijiagkmcnojhmhdjajmglejhocnheb"
                     className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Install WikiBuy Free
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -209,18 +216,17 @@ export default function BestBrowserExtensionsPage() {
                 </div>
                 
                 <div className="text-center">
-                  <button 
-                    onClick={() => {
-                      console.log('Honey install clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to Honey extension download')
-                    }}
+                  <Link 
+                    href="https://chrome.google.com/webstore/detail/honey/bmnlcjabgnpnenekpadlanbbkooimhnj"
                     className="inline-flex items-center px-8 py-4 bg-amber-600 text-white font-semibold rounded-xl hover:bg-amber-700 transition-colors shadow-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Install Honey Free
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -262,18 +268,17 @@ export default function BestBrowserExtensionsPage() {
                 </div>
                 
                 <div className="text-center">
-                  <button 
-                    onClick={() => {
-                      console.log('Rakuten signup clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to Rakuten signup')
-                    }}
+                  <Link 
+                    href="https://www.rakuten.com/r/THECOU1623"
                     className="inline-flex items-center px-8 py-4 bg-purple-600 text-white font-semibold rounded-xl hover:bg-purple-700 transition-colors shadow-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Join Rakuten Free
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -287,33 +292,30 @@ export default function BestBrowserExtensionsPage() {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <button 
-                onClick={() => {
-                  console.log('WikiBuy install clicked - DEMO MODE')
-                  alert('Demo Mode: In production, this would redirect to WikiBuy extension download')
-                }}
+              <Link 
+                href="https://chrome.google.com/webstore/detail/wikibuy/ahijiagkmcnojhmhdjajmglejhocnheb"
                 className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Install WikiBuy
-              </button>
-              <button 
-                onClick={() => {
-                  console.log('Honey install clicked - DEMO MODE')
-                  alert('Demo Mode: In production, this would redirect to Honey extension download')
-                }}
+              </Link>
+              <Link 
+                href="https://chrome.google.com/webstore/detail/honey/bmnlcjabgnpnenekpadlanbbkooimhnj"
                 className="px-6 py-3 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-700 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Install Honey
-              </button>
-              <button 
-                onClick={() => {
-                  console.log('Rakuten signup clicked - DEMO MODE')
-                  alert('Demo Mode: In production, this would redirect to Rakuten signup')
-                }}
+              </Link>
+              <Link 
+                href="https://www.rakuten.com/r/THECOU1623"
                 className="px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Join Rakuten
-              </button>
+              </Link>
             </div>
           </section>
         </div>

@@ -451,24 +451,22 @@ export default function WikiBuyVsHoneyPage() {
                     This is what I do now. WikiBuy and Honey don't conflict with each other, and together they caught savings opportunities that either one alone would have missed. The 31% increase in savings makes this a no-brainer.
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <button 
-                      onClick={() => {
-                        console.log('WikiBuy install clicked - DEMO MODE')
-                        alert('Demo Mode: In production, this would redirect to WikiBuy extension download')
-                      }}
-                      className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+                    <Link 
+                      href="https://chrome.google.com/webstore/detail/capital-one-shopping/nenlahapcbofgnanklpelkaejcehkggg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors inline-block"
                     >
                       Install WikiBuy
-                    </button>
-                    <button 
-                      onClick={() => {
-                        console.log('Honey install clicked - DEMO MODE')
-                        alert('Demo Mode: In production, this would redirect to Honey extension download')
-                      }}
-                      className="px-6 py-3 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors"
+                    </Link>
+                    <Link 
+                      href="https://chrome.google.com/webstore/detail/honey/bmnlcjabgnpnenekpadlanbbkooimhnj"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors inline-block"
                     >
                       Install Honey
-                    </button>
+                    </Link>
                   </div>
                 </div>
                 
