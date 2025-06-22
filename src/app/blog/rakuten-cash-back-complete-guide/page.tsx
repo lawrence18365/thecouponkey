@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link'
 import EmailForm from '@/components/email-form'
 
@@ -725,18 +723,17 @@ export default function RakutenCashBackGuidePage() {
                 </div>
                 
                 <div className="text-center">
-                  <button 
-                    onClick={() => {
-                      console.log('Rakuten signup clicked - DEMO MODE')
-                      alert('Demo Mode: In production, this would redirect to Rakuten signup with affiliate link')
-                    }}
+                  <Link 
+                    href="https://www.rakuten.com/r/COUPON123?eeid=29041" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-8 py-4 bg-purple-600 text-white font-bold text-lg rounded-lg hover:bg-purple-700 transition-colors shadow-lg inline-flex items-center"
                   >
                     Join Rakuten & Get $40 Bonus
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
                 
                 <p className="text-gray-300 text-center mt-6">
