@@ -180,10 +180,13 @@ const storeData = {
   }
 }
 
+// FIX: This interface now includes the optional `searchParams` prop,
+// which makes it fully compatible with the expected props for a Next.js Page.
 interface StorePageProps {
   params: {
     slug: string
-  }
+  },
+  searchParams?: { [key: string]: string | string[] | undefined }
 }
 
 export function generateMetadata({ params }: StorePageProps) {
