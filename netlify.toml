@@ -1,0 +1,13 @@
+# Netlify Configuration File
+
+[build]
+  # This sets the command to run when building the site.
+  command = "npm run build"
+  
+  # This specifies the directory to publish after the build.
+  publish = ".next"
+
+[build.environment]
+  # This explicitly sets the Node.js version for the build environment.
+  # This will override any other settings and fix the Node version error.
+  NODE_VERSION = "20"
