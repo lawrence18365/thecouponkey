@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import Breadcrumbs from '@/components/ui/breadcrumbs';
+import CopyCodeButton from '@/components/copy-code-button';
 import { Truck, Gift, Star, Clock } from 'lucide-react';
 import Link from 'next/link';
-import { realAffiliateOffers as liveAffiliateOffers, trackAffiliateClick } from '@/data/real-affiliate-offers';
+import { realAffiliateOffers as liveAffiliateOffers } from '@/data/real-affiliate-offers';
 
 export const metadata: Metadata = {
   title: 'Free Shipping Codes 2024 - No Minimum Orders | The Coupon Key',
@@ -208,17 +209,22 @@ export default function FreeShippingCodesPage() {
                         <span className="font-mono text-lg bg-gray-100 px-3 py-1 rounded">
                           {offer.code}
                         </span>
-                        <button className="text-blue-600 hover:text-blue-800 text-sm">Copy Code</button>
+                        <CopyCodeButton 
+                          code={offer.code}
+                          className="text-blue-600 hover:text-blue-800 text-sm"
+                        >Copy Code</CopyCodeButton>
                       </div>
                     </div>
                   )}
                   
-                  <button 
-                    onClick={() => trackAffiliateClick(offer)}
-                    className="w-full bg-green-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                  <Link 
+                    href={offer.affiliateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-green-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center block"
                   >
                     Get Free Shipping
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>

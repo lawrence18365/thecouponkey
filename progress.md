@@ -35,6 +35,7 @@
 - [x] **FIXED: 5-best-browser-extensions-save-money-automatically** - removed 'use client' + converted onClick to Links + added metadata
 - [x] **FIXED: amazon-coupon-codes-2025** - removed 'use client' + converted extension buttons to Links + **CREATED CopyCodeButton component for copy functionality**
 - [x] **FIXED: how-to-find-coupon-codes-like-pro** - removed 'use client' + converted onClick to Links + added metadata
+- [x] **FIXED: free-shipping-codes** - replaced onClick affiliate tracking with Link components + added functional CopyCodeButton
 - [x] **CREATED: CopyCodeButton client component** - Handles clipboard functionality without conflicting with server component metadata exports
 - [x] ~~Replace demo data with REAL Skimlinks offers~~ - COMPLETED!
 - [x] ~~Integrate live coupon codes (BOGOFREE, DESIGNER40, HOTDOG, etc.)~~ - COMPLETED!
