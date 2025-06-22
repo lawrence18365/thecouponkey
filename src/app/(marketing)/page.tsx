@@ -1,0 +1,1 @@
+export default function MarketingPage() {\n  // This page is now handled by the main app page.tsx\n  // You can use this for alternative marketing landing pages\n  return null\n}\n
