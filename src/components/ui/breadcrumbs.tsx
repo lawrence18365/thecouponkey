@@ -1,1 +1,188 @@
-'use client';\n\nimport Link from 'next/link';\nimport { ChevronRight, Home } from 'lucide-react';\nimport { usePathname } from 'next/navigation';\n\ninterface BreadcrumbItem {\n  label: string;\n  href: string;\n}\n\ninterface BreadcrumbsProps {\n  customItems?: BreadcrumbItem[];\n  showHome?: boolean;\n}\n\nexport default function Breadcrumbs({ customItems, showHome = true }: BreadcrumbsProps) {\n  const pathname = usePathname();\n  \n  const generateBreadcrumbs = (): BreadcrumbItem[] => {\n    if (customItems) return customItems;\n    \n    const pathSegments = pathname.split('/').filter(segment => segment !== '');\n    const breadcrumbs: BreadcrumbItem[] = [];\n    \n    if (showHome) {\n      breadcrumbs.push({ label: 'Home', href: '/' });\n    }\n    \n    let currentPath = '';\n    pathSegments.forEach((segment, index) => {\n      currentPath += `/${segment}`;\n      \n      // Format segment for display\n      let label = segment\n        .split('-')\n        .map(word => word.charAt(0).toUpperCase() + word.slice(1))\n        .join(' ');\n      \n      // Handle special cases\n      switch (segment) {\n        case 'stores':\n          label = 'Stores';\n          break;\n        case 'categories':\n          label = 'Categories';\n          break;\n        case 'deals':\n          label = 'Deals';\n          break;\n        case 'coupons':\n          label = 'Coupons';\n          break;\n        case 'browser-extension':\n          label = 'Browser Extension';\n          break;\n        case 'black-friday-deals':\n          label = 'Black Friday Deals';\n          break;\n        case 'cyber-monday-coupons':\n          label = 'Cyber Monday Coupons';\n          break;\n        case 'free-shipping-codes':\n          label = 'Free Shipping Codes';\n          break;\n        case 'student-discounts':\n          label = 'Student Discounts';\n          break;\n        case 'military-discounts':\n          label = 'Military Discounts';\n          break;\n      }\n      \n      breadcrumbs.push({ label, href: currentPath });\n    });\n    \n    return breadcrumbs;\n  };\n  \n  const breadcrumbs = generateBreadcrumbs();\n  \n  if (breadcrumbs.length <= 1) return null;\n  \n  // Generate structured data for breadcrumbs\n  const structuredData = {\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"BreadcrumbList\",\n    \"itemListElement\": breadcrumbs.map((item, index) => ({\n      \"@type\": \"ListItem\",\n      \"position\": index + 1,\n      \"name\": item.label,\n      \"item\": `https://thecouponkey.com${item.href}`\n    }))\n  };\n  \n  return (\n    <>\n      {/* Structured Data for Breadcrumbs */}\n      <script\n        type=\"application/ld+json\"\n        dangerouslySetInnerHTML={{\n          __html: JSON.stringify(structuredData)\n        }}\n      />\n      \n      {/* Visual Breadcrumbs */}\n      <nav \n        aria-label=\"Breadcrumb\" \n        className=\"bg-gray-50 border-b border-gray-200 py-3\"\n      >\n        <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n          <ol className=\"flex items-center space-x-2 text-sm\">\n            {breadcrumbs.map((item, index) => {\n              const isLast = index === breadcrumbs.length - 1;\n              \n              return (\n                <li key={item.href} className=\"flex items-center\">\n                  {index > 0 && (\n                    <ChevronRight className=\"w-4 h-4 text-gray-400 mr-2\" />\n                  )}\n                  \n                  {isLast ? (\n                    <span className=\"text-gray-900 font-medium\">\n                      {item.label === 'Home' ? (\n                        <Home className=\"w-4 h-4\" />\n                      ) : (\n                        item.label\n                      )}\n                    </span>\n                  ) : (\n                    <Link \n                      href={item.href}\n                      className=\"text-gray-500 hover:text-gray-700 transition-colors duration-200 flex items-center\"\n                    >\n                      {item.label === 'Home' ? (\n                        <Home className=\"w-4 h-4\" />\n                      ) : (\n                        item.label\n                      )}\n                    </Link>\n                  )}\n                </li>\n              );\n            })}\n          </ol>\n        </div>\n      </nav>\n    </>\n  );\n}\n\n// Hook for generating breadcrumb items in pages\nexport function useBreadcrumbs(customItems?: BreadcrumbItem[]): BreadcrumbItem[] {\n  const pathname = usePathname();\n  \n  if (customItems) return customItems;\n  \n  const pathSegments = pathname.split('/').filter(segment => segment !== '');\n  const breadcrumbs: BreadcrumbItem[] = [{ label: 'Home', href: '/' }];\n  \n  let currentPath = '';\n  pathSegments.forEach(segment => {\n    currentPath += `/${segment}`;\n    const label = segment\n      .split('-')\n      .map(word => word.charAt(0).toUpperCase() + word.slice(1))\n      .join(' ');\n    \n    breadcrumbs.push({ label, href: currentPath });\n  });\n  \n  return breadcrumbs;\n}\n"
+'use client';
+
+import Link from 'next/link';
+import { ChevronRight, Home } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+
+// Interface for a single breadcrumb item
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+}
+
+// Props for the Breadcrumbs component
+interface BreadcrumbsProps {
+  customItems?: BreadcrumbItem[];
+  showHome?: boolean;
+}
+
+/**
+ * Renders a breadcrumb navigation menu.
+ * It can automatically generate breadcrumbs from the URL path or display a custom set of items.
+ * It also generates JSON-LD structured data for SEO.
+ */
+export default function Breadcrumbs({ customItems, showHome = true }: BreadcrumbsProps) {
+  const pathname = usePathname();
+
+  // Generates breadcrumb items based on the current path or custom items provided
+  const generateBreadcrumbs = (): BreadcrumbItem[] => {
+    if (customItems) {
+      return customItems;
+    }
+
+    const pathSegments = pathname.split('/').filter(segment => segment !== '');
+    const breadcrumbs: BreadcrumbItem[] = [];
+
+    if (showHome) {
+      breadcrumbs.push({ label: 'Home', href: '/' });
+    }
+
+    let currentPath = '';
+    pathSegments.forEach((segment) => {
+      currentPath += `/${segment}`;
+
+      // Format segment for display by capitalizing words
+      let label = segment
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+
+      // Handle special URL segments with specific labels
+      switch (segment) {
+        case 'stores':
+          label = 'Stores';
+          break;
+        case 'categories':
+          label = 'Categories';
+          break;
+        case 'deals':
+          label = 'Deals';
+          break;
+        case 'coupons':
+          label = 'Coupons';
+          break;
+        case 'browser-extension':
+          label = 'Browser Extension';
+          break;
+        case 'black-friday-deals':
+          label = 'Black Friday Deals';
+          break;
+        case 'cyber-monday-coupons':
+          label = 'Cyber Monday Coupons';
+          break;
+        case 'free-shipping-codes':
+          label = 'Free Shipping Codes';
+          break;
+        case 'student-discounts':
+          label = 'Student Discounts';
+          break;
+        case 'military-discounts':
+          label = 'Military Discounts';
+          break;
+      }
+
+      breadcrumbs.push({ label, href: currentPath });
+    });
+
+    return breadcrumbs;
+  };
+
+  const breadcrumbs = generateBreadcrumbs();
+
+  // Do not render if there's only one item (e.g., just "Home")
+  if (breadcrumbs.length <= 1) {
+    return null;
+  }
+
+  // Generate JSON-LD structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.label,
+      "item": `https://thecouponkey.com${item.href}`
+    })),
+  };
+
+  return (
+    <>
+      {/* Structured Data for Breadcrumbs - hidden from user, for search engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+
+      {/* Visual Breadcrumbs */}
+      <nav
+        aria-label="Breadcrumb"
+        className="bg-gray-50 border-b border-gray-200 py-3"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ol className="flex items-center space-x-2 text-sm">
+            {breadcrumbs.map((item, index) => {
+              const isLast = index === breadcrumbs.length - 1;
+
+              return (
+                <li key={item.href} className="flex items-center">
+                  {index > 0 && (
+                    <ChevronRight className="w-4 h-4 text-gray-400 mr-2" />
+                  )}
+
+                  {isLast ? (
+                    <span className="text-gray-900 font-medium flex items-center">
+                      {item.label === 'Home' && showHome ? (
+                        <Home className="w-4 h-4" />
+                      ) : (
+                        item.label
+                      )}
+                    </span>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-gray-500 hover:text-gray-700 transition-colors duration-200 flex items-center"
+                    >
+                      {item.label === 'Home' && showHome ? (
+                        <Home className="w-4 h-4" />
+                      ) : (
+                        item.label
+                      )}
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      </nav>
+    </>
+  );
+}
+
+// Hook for generating breadcrumb items in pages
+export function useBreadcrumbs(customItems?: BreadcrumbItem[]): BreadcrumbItem[] {
+  const pathname = usePathname();
+
+  if (customItems) {
+    return customItems;
+  }
+
+  const pathSegments = pathname.split('/').filter(segment => segment !== '');
+  const breadcrumbs: BreadcrumbItem[] = [{ label: 'Home', href: '/' }];
+
+  let currentPath = '';
+  pathSegments.forEach(segment => {
+    currentPath += `/${segment}`;
+    const label = segment
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+
+    breadcrumbs.push({ label, href: currentPath });
+  });
+
+  return breadcrumbs;
+}
