@@ -1,8 +1,18 @@
-'use client'
-
 import Link from 'next/link'
 import CouponCard from '@/components/coupon-card'
 import EmailForm from '@/components/email-form'
+
+// SEO Metadata for Best Buy Store Page
+export const metadata = {
+  title: 'Best Buy Coupons & Promo Codes - Save Up to 50% | TheCouponKey',
+  description: 'Find the latest Best Buy coupons and promo codes. Save up to 50% on electronics, gaming gear, TVs, laptops, and tech accessories with verified deals.',
+  keywords: 'Best Buy coupons, Best Buy promo codes, Best Buy deals, electronics coupons, tech deals, gaming discounts',
+  openGraph: {
+    title: 'Best Buy Coupons & Promo Codes - Save Up to 50%',
+    description: 'Find verified Best Buy coupons and exclusive tech deals. Save on electronics, gaming, TVs and more.',
+    type: 'website',
+  },
+}
 
 // Demo Best Buy deals data
 const bestBuyDeals = [

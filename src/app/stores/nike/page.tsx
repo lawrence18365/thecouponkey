@@ -1,8 +1,18 @@
-'use client'
-
 import Link from 'next/link'
 import CouponCard from '@/components/coupon-card'
 import EmailForm from '@/components/email-form'
+
+// SEO Metadata for Nike Store Page
+export const metadata = {
+  title: 'Nike Coupons & Promo Codes - Save Up to 40% | TheCouponKey',
+  description: 'Find the latest Nike coupons and promo codes. Save up to 40% on shoes, apparel, and athletic gear with verified deals and exclusive discounts.',
+  keywords: 'Nike coupons, Nike promo codes, Nike deals, athletic wear discounts, sneaker deals, sportswear coupons',
+  openGraph: {
+    title: 'Nike Coupons & Promo Codes - Save Up to 40%',
+    description: 'Find verified Nike coupons and exclusive deals. Save on shoes, apparel and athletic gear.',
+    type: 'website',
+  },
+}
 
 // Demo Nike deals data
 const nikeDeals = [

@@ -98,6 +98,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
 
+    // Special Landing Pages - Seasonal and Evergreen
+    {
+      url: `${baseUrl}/black-friday-deals`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/cyber-monday-coupons`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/free-shipping-codes`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+
     // Blog Posts - All existing blog posts
     {
       url: `${baseUrl}/blog/5-best-browser-extensions-save-money-automatically`,

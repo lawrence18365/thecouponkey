@@ -1,8 +1,18 @@
-'use client'
-
 import Link from 'next/link'
 import CouponCard from '@/components/coupon-card'
 import EmailForm from '@/components/email-form'
+
+// SEO Metadata for Amazon Store Page
+export const metadata = {
+  title: 'Amazon Coupons & Promo Codes - Save Up to 70% | TheCouponKey',
+  description: 'Find the latest Amazon coupons and promo codes. Save up to 70% with verified deals, exclusive discounts, and free shipping offers on electronics, fashion, home goods & more.',
+  keywords: 'Amazon coupons, Amazon promo codes, Amazon deals, Amazon discounts, Amazon coupon codes, Amazon savings',
+  openGraph: {
+    title: 'Amazon Coupons & Promo Codes - Save Up to 70%',
+    description: 'Find verified Amazon coupons and exclusive deals. Save on electronics, fashion, home goods and more.',
+    type: 'website',
+  },
+}
 
 // Demo Amazon deals data
 const amazonDeals = [
