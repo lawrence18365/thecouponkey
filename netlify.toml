@@ -1,4 +1,5 @@
 # Netlify Configuration File
+# This is the single source of truth for the build.
 
 [build]
   # This sets the command to run when building the site.

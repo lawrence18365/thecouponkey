@@ -6,8 +6,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   
-  // THIS IS THE FINAL FIX:
-  // It tells Next.js to also ignore TypeScript errors during the build.
+  // This tells Next.js to also ignore TypeScript errors during the build.
   typescript: {
     ignoreBuildErrors: true,
   },
