@@ -1,5 +1,6 @@
 import CouponCard from '@/components/coupon-card'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 // Demo data for stores
@@ -15,7 +16,7 @@ const storeData = {
     affiliate_network: 'Direct Partnership',
     created_at: '',
     updated_at: '',
-    description: 'The world\'s largest online marketplace offering everything from books to electronics, with fast shipping and competitive prices.',
+    description: 'The world&apos;s largest online marketplace offering everything from books to electronics, with fast shipping and competitive prices.',
     founded: '1994',
     headquarters: 'Seattle, WA',
     category: { id: '1', name: 'Electronics', slug: 'electronics', is_featured: true, created_at: '' },
@@ -110,7 +111,7 @@ const storeData = {
     affiliate_network: 'ShareASale',
     created_at: '',
     updated_at: '',
-    description: 'The world\'s leading designer, marketer and distributor of authentic athletic footwear, apparel and accessories.',
+    description: 'The world&apos;s leading designer, marketer and distributor of authentic athletic footwear, apparel and accessories.',
     founded: '1964',
     headquarters: 'Beaverton, OR',
     category: { id: '2', name: 'Fashion', slug: 'fashion', is_featured: true, created_at: '' },
@@ -180,8 +181,8 @@ const storeData = {
   }
 }
 
-// FIX: This interface now includes the optional `searchParams` prop,
-// which makes it fully compatible with the expected props for a Next.js Page.
+// This interface includes the optional `searchParams` prop,
+// making it compatible with the expected props for a Next.js Page.
 interface StorePageProps {
   params: {
     slug: string
@@ -220,10 +221,12 @@ export default function StorePage({ params }: StorePageProps) {
             {/* Store Logo */}
             <div className="w-24 h-24 bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden flex-shrink-0">
               {store.logo_url ? (
-                <img 
+                <Image 
                   src={store.logo_url} 
                   alt={`${store.name} logo`}
-                  className="max-w-full max-h-full object-contain"
+                  width={96}
+                  height={96}
+                  className="object-contain"
                 />
               ) : (
                 <span className="text-3xl font-bold text-gray-400">{store.name.charAt(0)}</span>
@@ -330,7 +333,7 @@ export default function StorePage({ params }: StorePageProps) {
               No Active Deals Right Now
             </h3>
             <p className="text-gray-600 mb-8 max-w-md mx-auto">
-              We're working to bring you the latest {store.name} deals. Check back soon or browse other stores.
+              We&apos;re working to bring you the latest {store.name} deals. Check back soon or browse other stores.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link 
